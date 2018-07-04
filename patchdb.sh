@@ -13,4 +13,3 @@ echo "Sorting data for displaying"
 sed "s@\(.*\),\(.*\),\(.*\),\(.*\),\(.*\),\(.*\),\(.*\)@\1,\2,\3,\6,\4,\5,\7@g" user.bin > user-patched.bin
 echo "Flashing to handset"
 ./md380-tool spiflashwrite user-patched.bin 0x100000
-
