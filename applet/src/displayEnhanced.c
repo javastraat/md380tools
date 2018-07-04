@@ -86,7 +86,7 @@ const gfx_bitmap bmp_eye = {12, 12, 6, 4, eye_pix, &eye_pal, 0};
 #define __PTT_LASTHEARD
 #define __PTT_LASTHEARD_DOWN
 #define __RX_SCREEN_OPTION
-#define __RX_SCREEN_OPTION_BLACK
+#define __RX_SCREEN_OPTION_WHITE
 #endif
 
 static int lh_painted = 0;
@@ -181,7 +181,6 @@ static const char *const states[] = {
 	"BB,Brandenburg",
 	"BC,British Columbia",
 	"BE,Berlin",
-	"BRU,Brussel",
 	"BW,Baden-Wurttemberg",
 	"BY,Bavaria",
 	"CA,California",
@@ -195,8 +194,8 @@ static const char *const states[] = {
 	"EMI,Emila-Romagna",
 	"FL,Florida",
 	"FLD,Flevoland",
+	"FR,Friesland",
 	"FRI,Friuli-Venezia Giulia",
-	"FRL,Friesland",
 	"GA,Georgia",
 	"GLD,Gelderland",
 	"GR,Groningen",
@@ -243,7 +242,7 @@ static const char *const states[] = {
 	"NSW,New South Wales",
 	"NT,Northern Territory",
 	"NV,Nevada",
-	"NW,N.Rhine-Westphalia",
+	"NW,N. Rhine-Westphalia",
 	"NY,New York",
 	"O-V,Oost-Vlaanderen",
 	"OA,",
@@ -299,7 +298,8 @@ static const char *const states[] = {
 	"VA,Virginia",
 	"VAL,Valle d'Aosta",
 	"VAN,Antwerp",
-	"VBR,Vlaams-Brabant",
+	"VB,Vlaams-Brabant",
+	"VBR,Flemish Brabant",
 	"VEN,Veneto",
 	"VIC,Victoria",
 	"VLI,Limburg",

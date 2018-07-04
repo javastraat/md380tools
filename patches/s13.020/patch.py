@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     # Marks the version as "md380tools"
     patcher.setwstring(0x080d0b6c,
-                       "MD380Tools 2.0")
+                       "MD390Tools 2.0")
 
     # Fix some bad grammar
     patcher.setwstring(0x080f9a94,
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     #                      "Travis Goodspeed KK4VCZ");
     # Change the device name.
     patcher.setstring(0x080d0eb4,
-                      "Patched MD-380/390G")
+                      "PD2EMC Patched MD-390G")
 
     # remove volume screen (S13.020 using different address, keep offset in mind!)
     # patcher.nopout((0x08020D92))

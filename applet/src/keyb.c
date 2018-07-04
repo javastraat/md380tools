@@ -135,6 +135,7 @@ extern void gui_control( int r0 );
 
 void handle_hotkey( int keycode )
 {
+    printf("keycode= %d \n",keycode); 
     if (global_addl_config.devmode_level != 0) 	
 	PRINT("handle hotkey: %d\n", keycode );
     
@@ -203,10 +204,18 @@ void handle_hotkey( int keycode )
 	    netmon_off();
 	
 	} else if ( (keycode) == (kc_cursor_up) ) {
-	    return ;	
+          if ((nm_screen==0) && (! Menu_IsVisible() )) {
+               who_dat(keycode);
+          }
+         return ;	
 
 	} else if ( (keycode) == (kc_cursor_down) ) {
-	    return ;	
+          printf("nm_screen= %d\n",nm_screen);
+          printf("Menu_IsVisible %d \n",Menu_IsVisible() );
+          if ((nm_screen==0) && (! Menu_IsVisible() )){
+               who_dat(keycode);
+          }
+	    return ;		
 
 	} else if ( (keycode) == (kc_syslog_dump) ) {
             static int cnt = 0 ;
@@ -522,9 +531,9 @@ void set_keyb(int keyb_mode)
 
 inline int is_intercept_allowed()
 {
-    if( !is_netmon_enabled() ) {
-        return 0 ;
-    }
+    //if( !is_netmon_enabled() ) {
+    // return 0 ;
+    //}
     
 //    switch( get_main_mode() ) {
 //        case 28 :
@@ -596,11 +605,10 @@ void kb_handle(int key) {
 				handle_hotkey(kc);
 				return;
 		}
-	}
-
+     }
 
 	if ( (key == kc_cursor_up) || (key == kc_cursor_down) ) {
-		kb_keycode = key;
+          kb_keycode = key;
 		kb_keypressed = 2;
 	}
 }

@@ -83,7 +83,7 @@ class Tool(DFU):
         super(Tool, self).__init__(device, alt)
         # We need to read the manufacturer string to hook the added USB functions
         # Some systems (Raspian Jessie) don't have this property
-        getattr(device, "manufacturer")
+        #
 
     def drawtext(self, str, a, b):
         """Sends a new MD380 command to draw text on the screen.."""
@@ -538,20 +538,32 @@ def spiflashwrite(dfu, filename, adr):
             dfu.md380_custom(0x91, 0x01)  # disable any radio and UI events
             # while on spi flash
             print("erase %d bytes @ 0x%x" % (size, adr))
+            block = 0
+            nextdecade = 0
+            blocks = size / 0x1000
             for n in range(adr, adr + size + 1, 0x1000):
-                # print("erase %x " % n)
+                block += 1
+                percent = block * 100 / blocks
+                if (percent % 10 == 0 and percent > nextdecade):
+                    print("> Erase progress %0d%% " % percent)
+                    nextdecade += 10
                 dfu.spiflash_erase64kblock(n)
             fullparts = int(size / 1024)
             print("flashing %d bytes @ 0x%x" % (size, adr))
             if fullparts > 0:
+                nextdecade =0
                 for n in range(0, fullparts, 1):
-                    # print("%d %d %x %d " % (fullparts, n, adr + n * 1024, 1024))
+                    percent = n * 100 / fullparts
+                    if (percent % 10 == 0 and percent > nextdecade):
+                        print("> Write progress %0d%%" % percent)
+                        nextdecade += 10
                     dfu.spiflashpoke(adr + n * 1024, 1024, data[n * 1024:(n + 1) * 1024])
             lastpartsize = size - fullparts * 1024
 
             if lastpartsize > 0:
                 # print("%d  %x %d " % (fullparts, adr + fullparts * 1024, lastpartsize))
                 dfu.spiflashpoke(adr + fullparts * 1024, lastpartsize, data[fullparts * 1024:fullparts * 1024 + lastpartsize])
+            print("> Write progress %0d%%" % 100 )
             sys.stdout.write("reboot radio now\n")
             dfu.md380_reboot()
             f.close()
