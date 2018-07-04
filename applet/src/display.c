@@ -246,7 +246,7 @@ static const char *const states[] = {
 	"NW,N.Rhine-Westphalia",
 	"NY,New York",
 	"O-V,Oost-Vlaanderen",
-	"OA,",
+	"OA,OA",
 	"OH,Ohio",
 	"OK,Oklahoma",
 	"ON,Ontario",

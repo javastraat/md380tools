@@ -29,8 +29,8 @@
 #include "system_hrc5000.h"
 
 // Main menu name
-const static wchar_t wt_main_menu[]         = L"MD390Tools";    // MD380Tools menu name
-const static wchar_t wt_main_menutxt[]      = L"MD390Tools 2.0";// MD380Tools menu header
+const static wchar_t wt_main_menu[]         = L"MD380Tools";    // MD380Tools menu name
+const static wchar_t wt_main_menutxt[]      = L"MD380Tools 2.0";// MD380Tools menu header
 // Main menu entries 
 const static wchar_t wt_main_display[]      = L"Display";	// main menu 1 - display options
 const static wchar_t wt_main_radio[]        = L"Radio";		// main menu 2 - radio options
