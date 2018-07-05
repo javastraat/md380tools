@@ -1697,7 +1697,7 @@ void draw_adhoc_statusline()
 			strcat(bot_status, "MHz");
 			strcpy(tg_fill, "   ");
 		} else if ( *ch_tone_type == 'D')  {
-			strcpy(fm_sql, "DCS");
+			strcpy(fm_sql, "D"); //dcs on topbar
 			strcpy(bot_status, fm_sql);					// init bottom string
 			strcat(bot_status, ":");
 			strcat(bot_status, current_channel_info_E.EncTone.text);	// add DCS code
@@ -1707,7 +1707,7 @@ void draw_adhoc_statusline()
 				strcpy(fm_sql, "");			
 				strcpy(bot_status, fm_sql);
 			} else {	
-				strcpy(fm_sql, "CTS");
+				strcpy(fm_sql, "C"); //show cts on topbar
 				strcpy(bot_status, fm_sql);					// init bottom string
 				strcat(bot_status, ":");
 				strcat(bot_status, current_channel_info_E.EncTone.text);	// add CTS tone freq
@@ -1717,9 +1717,9 @@ void draw_adhoc_statusline()
 		}
 
 		if (global_addl_config.mode_stat != 3) {				// if MODE/CC compact display set in config
-			strcpy(top_status, "FM ");					// init FM string
+			strcpy(top_status, " FM ");					// init FM string
 		} else {
-			strcpy(top_status, "FM");					// init FM string
+			strcpy(top_status, " FM");					// init FM string
 		}
 				
 		if (fIsWideBandwidth) { strcpy(fm_bw_stat, "|W"); } else { strcpy(fm_bw_stat, "|N"); }
