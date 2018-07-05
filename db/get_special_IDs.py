@@ -69,4 +69,3 @@ for idx, item in enumerate(data):
 
 file.close()
 sys.exit(0)
-
