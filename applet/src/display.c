@@ -586,7 +586,7 @@ void draw_tx_screen_layout(int showtimer) {
 	      
 	      dc.font = LCD_OPT_FONT_8x16;
 	      dc.y += 12;
-	      LCD_DrawString( &dc, " No\r Last Heard\r Info yet!!");
+	      LCD_DrawString( &dc, " Sorry no\r Last Heard\r Info yet!!");
 	 }
 	 if (showtimer == 1){
 	      if ( previous_sec != secs_display) {
