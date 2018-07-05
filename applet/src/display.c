@@ -797,17 +797,17 @@ void draw_micbargraph()
 	       } else {
 		  gfx_set_fg_color(0x555555);
 	       }
-	       gfx_set_bg_color(0xff000000);
+	       gfx_set_bg_color(0xff0000);
 	       gfx_blockfill(10, 55, centibel_val, 65);
 	       gfx_set_fg_color(0xff8032);
-	       gfx_set_bg_color(0xff000000);
+	       gfx_set_bg_color(0xff0000);
 	   }
 	}
     }
 
     if( is_rx && rx_active == 1 ) { // clear screen area
 	gfx_set_fg_color(0xff8032);
-	gfx_set_bg_color(0xff000000);
+	gfx_set_bg_color(0xff0000);
 	gfx_blockfill(9, 54, 151, 70);
 	rx_active = 0;
 	red = 0;
@@ -1339,7 +1339,7 @@ void draw_ta_screen(unsigned int bg_color)
     
     gfx_select_font(gfx_font_norm);
     gfx_set_fg_color(0xff8032);
-    gfx_set_bg_color(0xff000000);
+    gfx_set_bg_color(0xff0000);
 }
 
 /*
@@ -1445,7 +1445,7 @@ void draw_alt_statusline()
     }
 
     gfx_set_fg_color(0);
-    gfx_set_bg_color(0xff000000);
+    gfx_set_bg_color(0xff0000);
     gfx_select_font(gfx_font_norm);
 }
 
