@@ -1583,9 +1583,9 @@ void draw_adhoc_statusline()
 
 		// build the top statusline -------------------------------------------------------------------
 		if (global_addl_config.mode_stat != 3) {				// if MODE/CC compact display set in config
-		strcpy(top_status, " DMR ");						// init DMR string
+		strcpy(top_status, "DMR ");						// init DMR string
 		} else {
-		strcpy(top_status, " DMR");						// init DMR string compact
+		strcpy(top_status, "DMR");						// init DMR string compact
 		}
 
 		strcat(top_status, ch_offset);						// DMR + repeaterstatus
@@ -1717,9 +1717,9 @@ void draw_adhoc_statusline()
 		}
 
 		if (global_addl_config.mode_stat != 3) {				// if MODE/CC compact display set in config
-			strcpy(top_status, " FM ");					// init FM string
+			strcpy(top_status, "FM ");					// init FM string
 		} else {
-			strcpy(top_status, " FM");					// init FM string
+			strcpy(top_status, "FM");					// init FM string
 		}
 				
 		if (fIsWideBandwidth) { strcpy(fm_bw_stat, "|W"); } else { strcpy(fm_bw_stat, "|N"); }
