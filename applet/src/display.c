@@ -774,7 +774,7 @@ void draw_micbargraph()
 	       centibel_val /= 2; // scale
 
 	       gfx_set_fg_color(0x999999);
-	       gfx_set_bg_color(0xff000000);
+	       gfx_set_bg_color(0xff0000);
 	       gfx_blockfill(9, 54, 151, 66);
 
 	       // paint legend
@@ -1092,7 +1092,7 @@ void draw_rx_screen(unsigned int bg_color)
 	
     if( usr_find_by_dmrid(&usr,src) == 0 ) {
 		if( src==4000 ) {
-			usr.callsign = "Message" ;
+	   usr.callsign = "Message" ;
 	   usr.firstname = "from" ;
 	   usr.name = "Server" ;
 	   usr.place = "" ;
