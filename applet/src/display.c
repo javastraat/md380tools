@@ -1526,7 +1526,7 @@ void draw_adhoc_statusline()
 		if (global_addl_config.mode_stat != 3) {				// if MODE/CC compact display set in config
 			strcpy(ch_offset, "|S  ");
 		} else {
-			strcpy(ch_offset, "|S ");
+			strcpy(ch_offset, "|S|");
 		}
 	} else if (strcmp(ch_rx, ch_tx) > 0) {
 		if (global_addl_config.mode_stat != 3) {				// if MODE/CC compact display set in config
@@ -1583,9 +1583,9 @@ void draw_adhoc_statusline()
 
 		// build the top statusline -------------------------------------------------------------------
 		if (global_addl_config.mode_stat != 3) {				// if MODE/CC compact display set in config
-		strcpy(top_status, "DMR ");						// init DMR string
+		strcpy(top_status, " DMR ");						// init DMR string
 		} else {
-		strcpy(top_status, "D");						// init DMR string compact
+		strcpy(top_status, " DMR");						// init DMR string compact
 		}
 
 		strcat(top_status, ch_offset);						// DMR + repeaterstatus
@@ -1733,7 +1733,7 @@ void draw_adhoc_statusline()
 		} else {	
 			if (*ch_tone_type != 'N')  {	// if MODE/CC compact display set in config (and CTCSS not set to None)
 				if (fIsCTSvalid) {
-					strcat(top_status, "[");					// less space in compact mode
+					strcat(top_status, "");					// less space in compact mode
 					strcat(top_status, fm_sql);					// add the tone type to status
 					strcat(top_status, ":");
 					strcat(top_status, current_channel_info_E.EncTone.text);// add DCS/CTS tone to topstatus in compact mode
